@@ -23,7 +23,7 @@ class Jogador{
             nomeJogador = read;
         }
         void setInsert(char read){
-            nomeJogador = read;
+            insert = read;
         }
         void setVitorias(int read){
             vitorias = read;
