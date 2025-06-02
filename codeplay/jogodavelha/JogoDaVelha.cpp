@@ -23,8 +23,8 @@ class JogoDaVelha{
                 }
             }
         }
-        bool verificarVazio(arr1,arr2){
-            if (tabuleiro[val1][val2] == "+"){
+        bool verificarVazio(int arr1, int arr2){
+            if (tabuleiro[arr1][arr2] == '+'){
                 return true;
             }
             else{
@@ -43,10 +43,10 @@ class JogoDaVelha{
                 }
             }
             if (read == tabuleiro[1][1] == tabuleiro[2][2] == tabuleiro[3][3]){
-                holder true;
+                holder = true;
             }
             if (read == tabuleiro[3][1] == tabuleiro[2][2] == tabuleiro[1][3]){
-                holder true;
+                holder = true;
             }
             return holder;
         }
