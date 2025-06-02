@@ -15,14 +15,14 @@ class JogoDaVelha{
         }
         void zerarTabuleiro(){
             for(int i = 0; i < 3; i++){
-                for (j = 0; j < 3; j++){
+                for (int j = 0; j < 3; j++){
                     tabuleiro[i][j] = '+';
                 }
             }
         }
         void displayTabuleiro(){
-            for(int i = 0; i < 2; i++){
-                for(int j = 0; j < 2; j++){
+            for(int i = 0; i < 3; i++){
+                for(int j = 0; j < 3; j++){
                     cout << tabuleiro[i][j];
                     if (j == 2){
                         cout << "\n";
@@ -34,25 +34,25 @@ class JogoDaVelha{
             if (tabuleiro[arr1][arr2] == '+'){
                 return true;
             }
-            else{
+            else {
                 return false;
             }
         }
         bool verificarFim(char read){
             bool holder = false;
-            for (int i = 0; i < 2; i++){
-                if (read == tabuleiro[i][1] == tabuleiro[i][2] == tabuleiro[i][3]){
+            for (int i = 0; i < 3; i++){
+                if (read == tabuleiro[i][0] && read == tabuleiro[i][1] && read == tabuleiro[i][2]){
                     holder = true;
                 }
                     
-                if (read == tabuleiro[1][i] == tabuleiro[2][i] == tabuleiro[3][i]){
+                if (read == tabuleiro[0][i] && read == tabuleiro[1][i] && read == tabuleiro[2][i]){
                     holder = true;
                 }
             }
-            if (read == tabuleiro[1][1] == tabuleiro[2][2] == tabuleiro[3][3]){
+            if (read == tabuleiro[0][0] && read == tabuleiro[1][1] && read == tabuleiro[2][2]){
                 holder = true;
             }
-            if (read == tabuleiro[3][1] == tabuleiro[2][2] == tabuleiro[1][3]){
+            if (read == tabuleiro[2][0] && read == tabuleiro[1][1] && read == tabuleiro[0][2]){
                 holder = true;
             }
             return holder;
