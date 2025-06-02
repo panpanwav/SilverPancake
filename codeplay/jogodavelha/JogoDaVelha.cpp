@@ -13,6 +13,13 @@ class JogoDaVelha{
         char getCellTabuleiro(int arr1, int arr2){
             return tabuleiro[arr1][arr2];
         }
+        void zerarTabuleiro(){
+            for(int i = 0; i < 3; i++){
+                for (j = 0; j < 3; j++){
+                    tabuleiro[i][j] = '+';
+                }
+            }
+        }
         void displayTabuleiro(){
             for(int i = 0; i < 2; i++){
                 for(int j = 0; j < 2; j++){
