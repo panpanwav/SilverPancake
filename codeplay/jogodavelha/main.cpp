@@ -57,7 +57,7 @@ int main()
                 }
             }
             finalFase = game.verificarFim(player[jogadorDaRodada].getInsert());
-            if (finalFase == true){
+            if (finalFase == true && rodada !=9){
                 game.displayTabuleiro();
                 player[jogadorDaRodada].setVitorias(player[jogadorDaRodada].getVitorias()+1);
                 cout << "O vencedor é " << player[jogadorDaRodada].getNomeJogador() << "\n";
@@ -65,6 +65,14 @@ int main()
                 game.displayTabuleiro();
                 cout << "Deseja continuar? Insira: \n 1 - sim \n 2 - não\n";
             }
+            else if (rodada == 8){
+                finalFase = true;
+                cout << "Empate!\n";
+                cout << "Placar de " << player[0].getVitorias() << " a " << player[1].getVitorias() << "\n";
+                game.displayTabuleiro();
+                cout << "Deseja continuar? Insira: \n 1 - sim \n 2 - não\n";
+            }
+            
         }
         cin >> jogadorDaRodada;
         while (jogadorDaRodada != 1 && jogadorDaRodada != 2){
