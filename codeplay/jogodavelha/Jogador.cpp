@@ -1,6 +1,6 @@
 #include <iostream>
+#include <stdio.h>
 #include <string>
-#include "JogoDaVelha.cpp"
 using namespace std;
 
 class Jogador{
