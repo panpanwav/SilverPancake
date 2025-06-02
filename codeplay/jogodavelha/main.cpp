@@ -26,9 +26,9 @@ int main()
     player[1].setNomeJogador(lerString);
     player[0].setInsert('x');
     player[1].setInsert('o');
-    game.zerarTabuleiro();
     
     while(finalJogo == false){
+        game.zerarTabuleiro();
         partidaAtual++;
         cout << "Partida " << partidaAtual << "\n";
         finalFase = false;
@@ -59,15 +59,23 @@ int main()
             finalFase = game.verificarFim(player[jogadorDaRodada].getInsert());
             if (finalFase == true){
                 game.displayTabuleiro();
+                player[jogadorDaRodada].setVitorias(player[jogadorDaRodada].getVitorias()+1);
                 cout << "O vencedor é " << player[jogadorDaRodada].getNomeJogador() << "\n";
+                cout << "Placar de " << player[0].getVitorias() << " a " << player[1].getVitorias() << "\n";
                 game.displayTabuleiro();
-                cout << "Deseja continuar? Pressione: \n 0 - sim \n 1 - não\n";
+                cout << "Deseja continuar? Insira: \n 1 - sim \n 2 - não\n";
             }
         }
-        cin >> finalJogo;
-        while (finalJogo != 0 && finalJogo != 1){
+        cin >> jogadorDaRodada;
+        while (jogadorDaRodada != 1 && jogadorDaRodada != 2){
             cout << "valor inválido, tente novamente!\n";
-            cin >> finalJogo;
+            cin >> jogadorDaRodada;
+        }
+        if (jogadorDaRodada == 1){
+            finalJogo = false;
+        }
+        else {
+            finalJogo = true;
         }
     }
     
