@@ -5,8 +5,7 @@
 #include "JogoDaVelha.cpp"
 using namespace std;
 
-int main()
-{
+int main(){
     Jogador player[2];
     JogoDaVelha game;
     string lerString;
@@ -26,6 +25,7 @@ int main()
     player[1].setNomeJogador(lerString);
     player[0].setInsert('x');
     player[1].setInsert('o');
+    cout << "\n";
     
     while(finalJogo == false){
         game.zerarTabuleiro();
@@ -56,19 +56,20 @@ int main()
                     cout << "O bloco está ocupado com o valor " << game.getCellTabuleiro(val1,val2) << "\n";
                 }
             }
+            cout << "\n";
             finalFase = game.verificarFim(player[jogadorDaRodada].getInsert());
             if (finalFase == true && rodada !=9){
                 game.displayTabuleiro();
                 player[jogadorDaRodada].setVitorias(player[jogadorDaRodada].getVitorias()+1);
-                cout << "O vencedor é " << player[jogadorDaRodada].getNomeJogador() << "\n";
-                cout << "Placar de " << player[0].getVitorias() << " a " << player[1].getVitorias() << "\n";
+                cout << "\nO vencedor é " << player[jogadorDaRodada].getNomeJogador() << "\n";
+                cout << "Placar:  " << player[0].getNomeJogador() << " " << player[0].getVitorias() << " x " << player[1].getVitorias() << " " << player[1].getNomeJogador() << "\n";
                 game.displayTabuleiro();
                 cout << "Deseja continuar? Insira: \n 1 - sim \n 2 - não\n";
             }
             else if (rodada == 8){
                 finalFase = true;
-                cout << "Empate!\n";
-                cout << "Placar de " << player[0].getVitorias() << " a " << player[1].getVitorias() << "\n";
+                cout << "\nEmpate!\n";
+                cout << "Placar:  " << player[0].getNomeJogador() << " " << player[0].getVitorias() << " x " << player[1].getVitorias() << " " << player[0].getNomeJogador() << "\n";
                 game.displayTabuleiro();
                 cout << "Deseja continuar? Insira: \n 1 - sim \n 2 - não\n";
             }
