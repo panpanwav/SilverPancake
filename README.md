@@ -1,2 +1,2 @@
 # SilverPancake
-personal gitrub
+personal github
